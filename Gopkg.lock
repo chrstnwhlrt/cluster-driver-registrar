@@ -117,6 +117,14 @@
   version = "v1.1.5"
 
 [[projects]]
+  digest = "1:3672984587dcffb86bc4628b8e538411296c63186700e7ff5ab1b33ac8db3e37"
+  name = "github.com/kubernetes-csi/cluster-driver-registrar"
+  packages = ["pkg/connection"]
+  pruneopts = "UT"
+  revision = "0660c6c625439975cd47825925a21b4148bd4ffa"
+  version = "v1.0.1"
+
+[[projects]]
   digest = "1:610f50d23ee3e0fa37d77fc23bf2c3b6897d2dc1c934739f13cdf551e9fc57d9"
   name = "github.com/kubernetes-csi/csi-lib-utils"
   packages = ["protosanitizer"]
@@ -476,6 +484,7 @@
     "github.com/container-storage-interface/spec/lib/go/csi",
     "github.com/golang/glog",
     "github.com/golang/mock/gomock",
+    "github.com/kubernetes-csi/cluster-driver-registrar/pkg/connection",
     "github.com/kubernetes-csi/csi-lib-utils/protosanitizer",
     "github.com/kubernetes-csi/csi-test/driver",
     "google.golang.org/grpc",

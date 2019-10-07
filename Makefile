@@ -14,7 +14,7 @@
 
 .PHONY: all cluster-driver-registrar clean test
 
-REGISTRY_NAME=quay.io/k8scsi
+REGISTRY_NAME=christianwohlert
 IMAGE_NAME=csi-cluster-driver-registrar
 IMAGE_VERSION=v1.0-canary
 IMAGE_TAG=$(REGISTRY_NAME)/$(IMAGE_NAME):$(IMAGE_VERSION)
@@ -32,7 +32,7 @@ all: cluster-driver-registrar
 
 cluster-driver-registrar:
 	mkdir -p bin
-	CGO_ENABLED=0 GOOS=linux go build -a -ldflags '-X main.version=$(REV) -extldflags "-static"' -o ./bin/cluster-driver-registrar ./cmd/cluster-driver-registrar
+	CGO_ENABLED=0 GOOS=linux GOARCH=arm64 go build -a -ldflags '-X main.version=$(REV) -extldflags "-static"' -o ./bin/cluster-driver-registrar ./cmd/cluster-driver-registrar
 
 clean:
 	rm -rf bin
