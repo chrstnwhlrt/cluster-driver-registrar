@@ -1,4 +1,4 @@
-FROM arm64v8/alpine
+FROM arm32v7/alpine
 LABEL maintainers="Kubernetes Authors"
 LABEL description="CSI Cluster Driver registrar"
 

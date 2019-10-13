@@ -32,7 +32,7 @@ all: cluster-driver-registrar
 
 cluster-driver-registrar:
 	mkdir -p bin
-	CGO_ENABLED=0 GOOS=linux GOARCH=arm64 go build -a -ldflags '-X main.version=$(REV) -extldflags "-static"' -o ./bin/cluster-driver-registrar ./cmd/cluster-driver-registrar
+	CGO_ENABLED=0 GOOS=linux GOARCH=arm GOARM=7 go build -a -ldflags '-X main.version=$(REV) -extldflags "-static"' -o ./bin/cluster-driver-registrar ./cmd/cluster-driver-registrar
 
 clean:
 	rm -rf bin
